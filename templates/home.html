@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetic Predictor</title>
+</head>
+<body>
+    <h1> Diabetic Prediction</h1>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-top: 50px;
+        }
+
+        form {
+            margin-top: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        input[type="text"], input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+    
+    <form action="/prediction" method= "post">
+        <input type= "text" name= "Pregnancies" placeholder= "Pregnancies" ><br>
+        <input type= "text" name= "Glucose" placeholder= "Glucose" ><br>
+        <input type= "text" name= "BloodPressure" placeholder= "BloodPressure" ><br>
+        <input type= "text" name= "SkinThickness" placeholder= "SkinThickness" ><br>
+        <input type= "text" name= "Insulin" placeholder= "Insulin" ><br>
+        <input type= "text" name= "BMI" placeholder= "BMI" ><br>
+        <input type= "text" name= "DiabetesPedigreeFunction" placeholder= "DiabetesPedigreeFunction" ><br>
+        <input type= "text" name= "Age" placeholder= "Age" ><br>
+        <input type= "submit" value="predict">
+    </form>
+    {% if prediction == 1 %}
+       <h1>The person has diabetes.</h1>
+    {% else %}
+       <h1>The person does not have diabetes.</h1>
+    {% endif %}
+</body>
+</html>
